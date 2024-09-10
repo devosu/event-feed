@@ -1,0 +1,10 @@
+#!/bin/bash
+
+npm install
+npm update
+
+npm run lint
+npm run build
+# npm test
+
+git add -A
