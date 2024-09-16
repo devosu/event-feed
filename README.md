@@ -24,12 +24,24 @@ git clone https://github.com/devosu/event-feed.git
 cd event-feed
 ```
 
-3. Create from `main` and push your branch **BEFORE** making any changes.
+3. List all the remote branches, find the one you are responsible for, and create a local copy of the branch. Make sure your branch is up to date with main.
 
 ```bash
-git switch -c feature-mynewfeature-myname
+# Update your local main branch.
+git switch main
+git pull origin main
 
-git push -u origin feature-mynewfeature-myname
+# Fetch all remote branch info. 
+git fetch origin
+
+# List all available branches.
+git branch -a
+
+# Switch to and create a local copy of the remote feature branch.
+git switch --track origin/Feature/NameOfTheFeature
+
+# Make sure your local branch is up-to-date with main.
+git merge main
 ```
 
 4. Install the dependencies, and start the development server.
