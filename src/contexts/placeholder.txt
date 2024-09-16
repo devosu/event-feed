@@ -1,0 +1,4 @@
+Keming's Note:
+* Placeholder txt to commit the "contexts" dir.
+* Import custom contexts using i.e. "@contexts/CustomContext".
+* See "vite.config.js" for alias definition.

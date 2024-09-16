@@ -1,0 +1,4 @@
+Keming's Note:
+* Placeholder txt to commit the "components" dir.
+* Import custom components using i.e. "@components/CustomComponent".
+* See "vite.config.js" for alias definition.
