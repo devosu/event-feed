@@ -1,0 +1,4 @@
+Keming's Note:
+* Placeholder txt to commit the "utils" dir.
+* Import custom utils using i.e. "@utils/customUtil".
+* See "vite.config.js" for alias definition.

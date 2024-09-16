@@ -1,0 +1,10 @@
+Keming's Note:
+* Placeholder txt to commit the "hooks" dir.
+* Import custom hooks using i.e. "@hooks/CustomeHook".
+* See "vite.config.js" for alias definition.
+
+* Only use custom hooks when absolutely necessary.
+* Use "react-firehooks" over "react-firebase-hooks":
+  * "react-firebase-hooks" is no longer maintained.
+  * "react-firehooks" at https://www.npmjs.com/package/react-firehooks/v/1.6.0
+  

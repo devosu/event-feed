@@ -1,7 +1,36 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+// ./vite.config.js
+//
+// Global Vite configuration file.
+// See // https://vitejs.dev/config/ for more information.
 
-// https://vitejs.dev/config/
+// Node native module imports.
+import path from "node:path";
+
+// Vite essential and plugin imports.
+import react from "@vitejs/plugin-react";
+import { defineConfig } from "vite";
+
+// -----------------------------------------------------------------------------
 export default defineConfig({
   plugins: [react()],
-})
+  resolve: {
+    alias: {
+      // Source directory alias.
+      "@src": path.resolve(__dirname, "./src"),
+
+      // Static asset directory alias.
+      "@assets": path.resolve(__dirname, "./src/assets"),
+
+      // App and routing directory alias.
+      "@app": path.resolve(__dirname, "./src/app"),
+      "@routes": path.resolve(__dirname, "./src/app/routes"),
+
+      // Other directories alias.
+      "@hooks": path.resolve(__dirname, "./src/hooks"),
+      "@contexts": path.resolve(__dirname, "./src/contexts"),
+      "@components": path.resolve(__dirname, "./src/components"),
+      "@lib": path.resolve(__dirname, "./src/lib"),
+      "@utils": path.resolve(__dirname, "./src/utils"),
+    },
+  },
+});

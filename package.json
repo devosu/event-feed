@@ -24,15 +24,17 @@
   "dependencies": {
     "firebase": "^10.13.1",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "react-firehooks": "^4.1.1",
+    "react-router-dom": "^6.26.2"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.8.3",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react": "^4.3.1",
-    "husky": "^9.1.5",
     "globals": "^15.9.0",
+    "husky": "^9.1.5",
     "vite": "^5.4.1"
   },
   "engines": {
