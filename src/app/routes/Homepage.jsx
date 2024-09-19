@@ -9,7 +9,8 @@ import reactLogo from "@assets/images/react.svg";
 // Local asset imports.
 import viteLogo from "/vite.svg";
 import "@assets/stylesheets/Homepage.css";
-import { fbAuth } from "@lib/firebaseClientApp";
+import EmailInput from "../../components/EmailInput";
+// import { fbAuth } fromh "@lib/firebaseClientApp";
 
 // -----------------------------------------------------------------------------
 export default function Homepage() {
@@ -18,13 +19,13 @@ export default function Homepage() {
 
   // For DEMO ONLY, DELETE for production.
   // Log Firebase Auth object to console on mount.
-  useEffect(() => {
-    console.log(
-      fbAuth
-        ? "Firebase Auth object available."
-        : "Firebase Auth object not available.",
-    );
-  }, []);
+  // useEffect(() => {
+  //   console.log(
+  //     fbAuth
+  //       ? "Firebase Auth object available."
+  //       : "Firebase Auth object not available.",
+  //   );
+  // }, []);
 
   // Homepage render.
   return (
@@ -49,6 +50,7 @@ export default function Homepage() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
+      <EmailInput />
     </>
   );
 }
