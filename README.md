@@ -4,27 +4,62 @@ A platform for Ohio State students to keep up with the various happenings around
 
 ## 🛠️ Getting Started
 
-> [!IMPORTANT]
+> [!NOTE]
 > This project uses...
-> * `node 22` as runtime. 
-> * `npm` as package manager.
-> * `vite` as bundler.
-> * (Later `vitest` as testing framework.)
-> * `biome` as formatter/linter.
+>
+> * [`Git`](https://git-scm.com/book/en/v2/Getting-Started-What-is-Git%3F) as version manager.
+> * [`GitHub`](https://www.geeksforgeeks.org/what-is-github-and-how-to-use-it/) for code hosting and collaboration.
+> * [`node 22`](https://www.geeksforgeeks.org/node-js-introduction/) as dev server runtime.
+> * [`npm`](https://nodejs.org/en/learn/getting-started/an-introduction-to-the-npm-package-manager) as package manager.
+> * [`vite`](https://vite.dev/) as website bundler.
+> * (Later [`vitest`](https://vitest.dev/) as testing framework.)
+> * [`biome`](https://biomejs.dev/) as formatter/linter.
+> * [`husky`](https://typicode.github.io/husky/) for git hooks and automation.
 
-1. Setup Node.js 22 via `nvm`.
+### Step 1. Set Up Node.js 22
 
 > https://nodejs.org/en/download/package-manager
 
-2. Clone the repository, and `cd` to the directory.
+Download and install Node.js version 22 from official website, choosing via the node version manager (nvm) option. Example screenshot for Linux users:
+
+![Node.js 22 setup example for Linux screenshot](/docs/screenshots/Node.js%2022%20setup%20via%20nvm.png)
+
+To verify successful `node 22` setup, check the currently installed version in your terminal:
+
+```bash
+node --version
+```
+
+### Step 2. Set Up Git
+
+> https://git-scm.com/downloads
+
+To verify successful `git` setup, check the currently installed version in your terminal:
+
+```bash
+git --version
+```
+
+You are now ready to clone the repository, using your terminal:
 
 ```bash
 git clone https://github.com/devosu/event-feed.git
+```
 
+Make sure to switch to the cloned repository directory (`cd`) in your terminal to move on to the next step:
+
+```bash
 cd event-feed
 ```
 
-3. List all the remote branches, find the one you are responsible for, and create a local copy of the branch. Make sure your branch is up to date with main.
+### Step 3. Set Up Collaboration
+
+Using `git`, in your terminal:
+
+1. list all the remote branches,
+2. find the feature branch you are responsible for,
+3. create your local copy of the branch,
+4. make sure your branch is up to date with main.
 
 ```bash
 # Update your local main branch.
@@ -38,25 +73,99 @@ git fetch origin
 git branch -a
 
 # Switch to and create a local copy of the remote feature branch.
-git switch --track origin/Feature/NameOfTheFeature
+git switch --track origin/Feature/YourFeature
 
 # Make sure your local branch is up-to-date with main.
 git merge main
 ```
 
-4. Install the dependencies, and start the development server.
-
-```bash
-npm install
-
-npm run dev
-```
-
-5. You are now ready to contribute! 
-
 > [!NOTE]
 >
 > Remember to create a [**Pull Request**](https://github.com/devosu/event-feed/pulls) and request code review when merging to main.
+
+### Step 4. Set Up Firebase
+
+Install the dependencies using `npm` in your terminal:
+
+```bash
+npm install
+```
+
+Then start the development server **for the first time** in your terminal:
+
+```bash
+npm run dev
+```
+
+Your terminal should output something like this: 
+
+```bash
+$ npm run dev
+
+> event-feed@0.1.0 dev
+> vite
+
+Re-optimizing dependencies because lockfile has changed
+
+  VITE v5.4.6  ready in 651 ms
+
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: use --host to expose
+  ➜  press h + enter to show help
+```
+
+If you copy and paste the `localhost` url into your browser, you might find that you are seeting blank screen instead of default project screen.
+
+Example of black screen with Firebase error:
+
+![Example of blank screen with Firebase error screenshot](/docs/screenshots/Blank%20screen%20with%20Firebase%20error.png)
+
+Example of default project screen:
+
+![Example of default project screen screenshot](/docs/screenshots/Default%20project%20screen.png)
+
+This is because we have not yet set up Firebase, our backend and database framework.
+
+> [!IMPORTANT]
+>
+> Please let @KemingHe know to add your Gmail to the Firebase project and give you access.
+
+Open [Firebase Console](https://console.firebase.google.com) in your browser and look for the `DEV OSU Event Feed` project card:
+
+> https://console.firebase.google.com
+
+![DEV OSU Event Feed Firebase project card screenshot](/docs/screenshots/Firebase%20project%20card.png)
+
+Once inside, navigate the the `Event Feed App` to find the Firebase credentials needed for this project to work:
+
+![Find and click on the "Event Feed App" tab in the project (screenshot)](/docs/screenshots/Find%20and%20click%20on%20the%20"Event%20Feed%20App"%20tab%20in%20the%20project.png)
+
+> [!WARNING]
+>
+> **NEVER** hard-code credentials into the project, we will follow best security practice and use a local `.env` setup instead. Read carefully:
+
+In your terminal, create a copy of the existing `.env.example` file and name it `.env`. This new file is local to your device and should **NEVER** be shared.
+
+```bash
+cp .env.exmaple .env
+```
+
+Don't copy the quotes `"`, populate your local `.env` file with all the necessary credentials:
+
+```bash
+VITE_FIREBASE_API_KEY=...
+VITE_FIREBASE_AUTH_DOMAIN=...
+VITE_FIREBASE_PROJECT_ID=...
+VITE_FIREBASE_STORAGE_BUCKET=...
+VITE_FIREBASE_MESSAGING_SENDER_ID=...
+VITE_FIREBASE_APP_ID=...
+```
+
+Now when you run `npm run dev`, you should see the default project screen. *Congrates on setting up Firebase!*
+
+### Step 5. Contribute
+
+You are now ready to contribute to Event Feed!
 
 ## 🛡️ License
 
