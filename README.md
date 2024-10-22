@@ -136,9 +136,17 @@ Open [Firebase Console](https://console.firebase.google.com) in your browser and
 
 ![DEV OSU Event Feed Firebase project card screenshot](/docs/screenshots/Firebase%20project%20card.png)
 
-Once inside, navigate the the `Event Feed App` to find the Firebase credentials needed for this project to work:
+Once inside, navigate to the `Event Feed App` to find the Firebase credentials needed for this project to work. Make sure to click on the gear icon to access the app page.
 
-![Find and click on the "Event Feed App" tab in the project (screenshot)](/docs/screenshots/Find%20and%20click%20on%20the%20"Event%20Feed%20App"%20tab%20in%20the%20project.png)
+![Find and click on the "Event Feed App" tab in the project (screenshot)](/docs/screenshots/Find%20and%20click%20on%20the%20Event%20Feed%20App%20tab%20in%20the%20project.png)
+
+![Click on the gear icon to see app credentials](/docs/screenshots/Click%20on%20the%20gear%20icon%20to%20see%20app%20credentials.png)
+
+Scroll down on the app page to find the Firebase credentials:
+
+![Firebase credentials page pt1 screenshot](/docs/screenshots/Firebase%20crendentials%20page%20pt1.png)
+
+![Firebase credentials page pt2 screenshot](/docs/screenshots/Firebase%20crendentials%20page%20pt2.png)
 
 > [!WARNING]
 >
@@ -147,18 +155,28 @@ Once inside, navigate the the `Event Feed App` to find the Firebase credentials 
 In your terminal, create a copy of the existing `.env.example` file and name it `.env`. This new file is local to your device and should **NEVER** be shared.
 
 ```bash
-cp .env.exmaple .env
+cp .env.example .env
 ```
 
 Don't copy the quotes `"`, populate your local `.env` file with all the necessary credentials:
 
 ```bash
-VITE_FIREBASE_API_KEY=...
-VITE_FIREBASE_AUTH_DOMAIN=...
-VITE_FIREBASE_PROJECT_ID=...
-VITE_FIREBASE_STORAGE_BUCKET=...
-VITE_FIREBASE_MESSAGING_SENDER_ID=...
-VITE_FIREBASE_APP_ID=...
+# This is correct.
+VITE_FIREBASE_API_KEY=some-key
+
+# This is INCORRECT!
+VITE_FIREBASE_API_KEY = "some-key"
+```
+
+Your `.env` file should look something like this in the end:
+
+```bash
+VITE_FIREBASE_API_KEY=some-key
+VITE_FIREBASE_AUTH_DOMAIN=some-auth-domain
+VITE_FIREBASE_PROJECT_ID=some-project-id
+VITE_FIREBASE_STORAGE_BUCKET=some-storage-bucket
+VITE_FIREBASE_MESSAGING_SENDER_ID=some-sender-id
+VITE_FIREBASE_APP_ID=some-app-id
 ```
 
 Now when you run `npm run dev`, you should see the default project screen. *Congrates on setting up Firebase!*
