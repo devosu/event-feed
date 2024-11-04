@@ -9,6 +9,7 @@
 import { getApps, initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
+import { getFunctions } from "firebase/functions";
 
 // Local Firebase config import.
 import { firebaseConfig } from "@lib/firebaseConfig";
@@ -30,11 +31,12 @@ export function firebaseClientApp() {
   // Get Firebase auth and Firestore services.
   const fbAuth = getAuth(fbApp);
   const fbStore = getFirestore(fbApp);
+  const fbFunc = getFunctions(fbApp);
 
   // Return Firebase auth and Firestore services.
-  return { fbApp, fbAuth, fbStore };
+  return { fbApp, fbAuth, fbStore, fbFunc };
 }
 
 // -----------------------------------------------------------------------------
 // Export Firebase client objects for use in other modules.
-export const { fbApp, fbAuth, fbStore } = firebaseClientApp();
+export const { fbApp, fbAuth, fbStore, fbFunc } = firebaseClientApp();

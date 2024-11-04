@@ -7,6 +7,7 @@ import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 
 // Local route component imports.
 import Homepage from "@app/routes/Homepage";
+import Nodemailer from "@app/routes/Nodemailer";
 import NotFound from "@app/routes/NotFound";
 
 // -----------------------------------------------------------------------------
@@ -15,6 +16,7 @@ export default function AppRouter() {
     <Router>
       <Routes>
         <Route path="/" element={<Homepage />} />
+        <Route path="/nodemailer" element={<Nodemailer />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>

@@ -5,8 +5,8 @@
 // React essential imports.
 import { useEffect, useState } from "react";
 
-import reactLogo from "@assets/images/react.svg";
 // Local asset imports.
+import reactLogo from "@assets/images/react.svg";
 import viteLogo from "/vite.svg";
 import "@assets/stylesheets/Homepage.css";
 import { fbAuth } from "@lib/firebaseClientApp";
