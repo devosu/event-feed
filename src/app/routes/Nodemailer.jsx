@@ -16,9 +16,14 @@ import useLoading from "@hooks/useLoading";
 
 // -----------------------------------------------------------------------------
 export default function Nodemailer() {
-  // Destination email input state hook.
-  const [destinationEmail, setDestinationEmail] = useState("");
-  const resetDestinationEmail = () => setDestinationEmail("");
+  // Email state hook.
+  const [email, setEmail] = useState({
+    to: "",
+    subject: "Subject for test email.",
+    text: "Plain text for test email.",
+    html: "<p>HTML for test email.</p>",
+  });
+  const setEmailProperty = (key, value) => setEmail({ ...email, [key]: value });
 
   // Loading state hook.
   const { isLoading, startLoading, stopLoading } = useLoading();
@@ -38,15 +43,8 @@ export default function Nodemailer() {
     resetTestEmailResult();
     startLoading();
     try {
-      const formData = new FormData(event.target);
-      const destinationEmail = formData.get("destinationEmail");
-      if (!destinationEmail || destinationEmail.length === 0) {
-        throw new Error("Destination email not provided.");
-      }
       const sendTestEmailOnCall = httpsCallable(fbFunc, "sendTestEmailOnCall");
-      const result = await sendTestEmailOnCall({
-        destination: destinationEmail,
-      });
+      const result = await sendTestEmailOnCall({ email });
       setTestEmailResult(result);
       console.log(result);
     } catch (error) {
@@ -54,7 +52,6 @@ export default function Nodemailer() {
       console.error("Error sending test email:", error);
     } finally {
       stopLoading();
-      resetDestinationEmail();
     }
   }
 
@@ -63,16 +60,54 @@ export default function Nodemailer() {
       <h1>Nodemailer Demo</h1>
       <div className="card">
         <form onSubmit={sendTestEmailHandler}>
-          <label htmlFor="destinationEmail">Destination email:</label>
-          <input
-            aria-disabled={isLoading}
-            disabled={isLoading}
-            id="destinationEmail"
-            name="destinationEmail"
-            onChange={(event) => setDestinationEmail(event.target.value)}
-            type="email"
-            value={destinationEmail}
-          />
+          <div>
+            <label htmlFor="emailTo">Email to:</label>
+            <input
+              aria-disabled={isLoading}
+              disabled={isLoading}
+              id="emailTo"
+              name="emailTo"
+              onChange={(event) => setEmailProperty("to", event.target.value)}
+              type="email"
+              value={email.to || ""}
+            />
+          </div>
+          <div>
+            <label htmlFor="emailSubject">Subject:</label>
+            <input
+              aria-disabled={isLoading}
+              disabled={isLoading}
+              id="emailSubject"
+              name="emailSubject"
+              onChange={(event) =>
+                setEmailProperty("subject", event.target.value)
+              }
+              type="text"
+              value={email.subject || ""}
+            />
+          </div>
+          <div>
+            <label htmlFor="emailText">Plain text:</label>
+            <textarea
+              aria-disabled={isLoading}
+              disabled={isLoading}
+              id="emailText"
+              name="emailText"
+              onChange={(event) => setEmailProperty("text", event.target.value)}
+              value={email.text || ""}
+            />
+          </div>
+          <div>
+            <label htmlFor="emailHTML">HTML:</label>
+            <textarea
+              aria-disabled={isLoading}
+              disabled={isLoading}
+              id="emailHTML"
+              name="emailHTML"
+              onChange={(event) => setEmailProperty("html", event.target.value)}
+              value={email.html || ""}
+            />
+          </div>
           <button
             aria-disabled={isLoading}
             disabled={isLoading}
@@ -85,8 +120,8 @@ export default function Nodemailer() {
       </div>
       <div className="card">
         <p>
-          <b>destinationEmail: </b>
-          {destinationEmail ? destinationEmail : "undefined"}
+          <b>email: </b>
+          {email ? JSON.stringify(email) : "undefined"}
         </p>
         <p>
           <b>isLoading: </b>
