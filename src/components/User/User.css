@@ -1,0 +1,119 @@
+body {
+  margin: 0;
+}
+
+.eventCard {
+  width: 325px;
+  height: 350px;
+  background-color: black;
+  margin: 20px;
+  border-radius: 25px;
+  display: grid;
+  grid-template-rows: 1.25fr 1fr;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.eventDetails {
+  height: 100%;
+  width: 100%;
+  background-color: whitesmoke;
+}
+.eventCardDeck {
+  height: 100%;
+  width: 80%;
+  position: relative;
+  bottom: 0;
+  right: 0;
+  margin: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: right;
+}
+
+#eventCardDeckContainer {
+  top: 0;
+  display: flex;
+  justify-content: right;
+}
+
+.eventTexts {
+  height: 100%;
+}
+
+.eventHeaderWrap > h1 {
+  margin: 0 10px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 300px;
+  font-size: 18pt;
+}
+
+.eventHeaderWrap {
+  position: relative;
+  max-height: 50%;
+  overflow: hidden;
+}
+
+.eventDateLocationWrap {
+  height: 30%;
+  position: relative;
+  margin: 5px 10px 0px 5px;
+}
+
+.eventDateLocationWrap > h2 {
+  display: block;
+  color: grey;
+  font-size: 12pt;
+  margin: 2px;
+}
+
+.eventFlaresWrap {
+  width: 100%;
+  height: 20%;
+  margin: 2px;
+}
+
+.eventFlaresWrap > h1 {
+  display: inline;
+  padding: 5px 10px;
+  margin: 0px 5px;
+  background-color: grey;
+  border-radius: 100px;
+  position: relative;
+  font-size: 12pt;
+  color: white;
+  top: 5px;
+}
+
+.eventClubNameWrap {
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  height: 27%;
+  align-items: center;
+  justify-items: center;
+  background-color: grey;
+}
+
+.eventClubNameWrap > #templogo {
+  background-color: red;
+  height: 30px;
+  width: 30px;
+  border-radius: 50px;
+}
+
+.eventClubNameWrap > h2 {
+  display: inline;
+  font-size: 14pt;
+  margin: 0;
+}
+
+#root {
+  display: grid;
+}
+
+nav {
+  height: 100px;
+  width: 100%;
+  display: block;
+}
