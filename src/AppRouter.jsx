@@ -6,9 +6,9 @@
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 
 // Local route component imports.
-import Homepage from "@app/routes/Homepage";
-import Nodemailer from "@app/routes/Nodemailer";
-import NotFound from "@app/routes/NotFound";
+import Homepage from "@pages/Homepage";
+import Nodemailer from "@pages/Nodemailer";
+import NotFound from "@pages/NotFound";
 
 // -----------------------------------------------------------------------------
 export default function AppRouter() {
@@ -17,6 +17,8 @@ export default function AppRouter() {
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/nodemailer" element={<Nodemailer />} />
+
+        {/* Put catch-all 404 route at the end of all other routes. */}
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>

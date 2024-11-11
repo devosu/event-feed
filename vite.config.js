@@ -21,9 +21,8 @@ export default defineConfig({
       // Static asset directory alias.
       "@assets": path.resolve(__dirname, "./src/assets"),
 
-      // App and routing directory alias.
-      "@app": path.resolve(__dirname, "./src/app"),
-      "@routes": path.resolve(__dirname, "./src/app/routes"),
+      // Pages and routing alias.
+      "@pages": path.resolve(__dirname, "./src/pages"),
 
       // Other directories alias.
       "@hooks": path.resolve(__dirname, "./src/hooks"),
