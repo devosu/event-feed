@@ -7,7 +7,7 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 
 // Local main app component import.
-import AppRouter from "@app/AppRouter";
+import AppRouter from "@src/AppRouter";
 
 // Local global stylesheet import.
 import "@src/index.css";
