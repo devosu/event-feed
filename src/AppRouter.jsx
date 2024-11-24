@@ -5,10 +5,10 @@
 // React essential imports.
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 
+import EventPage from "@pages/EventPage";
 // Local route component imports.
 import Homepage from "@pages/Homepage";
 import NotFound from "@pages/NotFound";
-import EventPage from "@pages/EventPage";
 
 // -----------------------------------------------------------------------------
 export default function AppRouter() {

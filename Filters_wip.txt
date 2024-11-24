@@ -1,0 +1,159 @@
+ import React, { useState } from 'react';
+import { Button, Menu, MenuItem } from '@mui/material';
+
+export default function Dropdown() {
+  const [anchorEl, setAnchorEl] = useState(null);
+
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
+  const createHandleMenuClick = (item) => () => {
+    console.log(`${item} clicked`);
+    handleClose();
+  };
+
+  return (
+    <div>
+      <Button
+        id="menu-button"
+        aria-controls={anchorEl ? 'simple-menu' : undefined}
+        aria-haspopup="true"
+        onClick={handleClick}
+      >
+        Example Options
+      </Button>
+      <Menu
+        id="simple-menu"
+        anchorEl={anchorEl}
+        open={Boolean(anchorEl)}
+        onClose={handleClose}
+      >
+        <MenuItem onClick={createHandleMenuClick('Filter 1')}>Filter 1</MenuItem>
+        <MenuItem onClick={createHandleMenuClick('Filter 2')}>Filter 2</MenuItem>
+      </Menu>
+    </div>
+
+    <div>
+      <Button
+        id="menu-button"
+        aria-controls={anchorEl ? 'simple-menu' : undefined}
+        aria-haspopup="true"
+        onClick={handleClick}
+      >
+        Example Options
+      </Button>
+      <Menu
+        id="simple-menu"
+        anchorEl={anchorEl}
+        open={Boolean(anchorEl)}
+        onClose={handleClose}
+      >
+        <MenuItem onClick={createHandleMenuClick('Filter 1')}>Filter 1</MenuItem>
+        <MenuItem onClick={createHandleMenuClick('Filter 2')}>Filter 2</MenuItem>
+      </Menu>
+    </div>
+
+    <div>
+      <Button
+        id="menu-button"
+        aria-controls={anchorEl ? 'simple-menu' : undefined}
+        aria-haspopup="true"
+        onClick={handleClick}
+      >
+        Example Options
+      </Button>
+      <Menu
+        id="simple-menu"
+        anchorEl={anchorEl}
+        open={Boolean(anchorEl)}
+        onClose={handleClose}
+      >
+        <MenuItem onClick={createHandleMenuClick('Filter 1')}>Filter 1</MenuItem>
+        <MenuItem onClick={createHandleMenuClick('Filter 2')}>Filter 2</MenuItem>
+        <MenuItem onClick={createHandleMenuClick('Filter 3')}>Filter 3</MenuItem>
+        <MenuItem onClick={createHandleMenuClick('Filter 4')}>Filter 4</MenuItem>
+        <MenuItem onClick={createHandleMenuClick('Filter 5')}>Filter 5</MenuItem>
+      </Menu>
+    </div>
+
+    </div>
+      <Button
+        id="menu-button"
+        aria-controls={anchorEl ? 'simple-menu' : undefined}
+        aria-haspopup="true"
+        onClick={handleClick}
+      >
+        Example Options
+      </Button>
+      <Menu
+        id="simple-menu"
+        anchorEl={anchorEl}
+        open={Boolean(anchorEl)}
+        onClose={handleClose}
+      >
+        <MenuItem onClick={createHandleMenuClick('Filter 1')}>Filter 1</MenuItem>
+        <MenuItem onClick={createHandleMenuClick('Filter 2')}>Filter 2</MenuItem>
+        <MenuItem onClick={createHandleMenuClick('Filter 3')}>Filter 3</MenuItem>
+        <MenuItem onClick={createHandleMenuClick('Filter 4')}>Filter 4</MenuItem>
+        <MenuItem onClick={createHandleMenuClick('Filter 5')}>Filter 5</MenuItem>
+        <MenuItem onClick={createHandleMenuClick('Filter 5')}>Filter 6</MenuItem>
+        <MenuItem onClick={createHandleMenuClick('Filter 5')}>Filter 7</MenuItem>
+      </Menu>
+    </div>
+
+  </div>
+  <Button
+    id="menu-button"
+    aria-controls={anchorEl ? 'simple-menu' : undefined}
+    aria-haspopup="true"
+    onClick={handleClick}
+  >
+    Example Options
+  </Button>
+  <Menu
+    id="simple-menu"
+    anchorEl={anchorEl}
+    open={Boolean(anchorEl)}
+    onClose={handleClose}
+  >
+    <MenuItem onClick={createHandleMenuClick('Filter 1')}>Filter 1</MenuItem>
+    <MenuItem onClick={createHandleMenuClick('Filter 2')}>Filter 2</MenuItem>
+  </Menu>
+</div>
+
+</div>
+<Button
+  id="menu-button"
+  aria-controls={anchorEl ? 'simple-menu' : undefined}
+  aria-haspopup="true"
+  onClick={handleClick}
+>
+  Example Options
+</Button>
+<Menu
+  id="simple-menu"
+  anchorEl={anchorEl}
+  open={Boolean(anchorEl)}
+  onClose={handleClose}
+>
+  <MenuItem onClick={createHandleMenuClick('Filter 1')}>Filter 1</MenuItem>
+  <MenuItem onClick={createHandleMenuClick('Filter 2')}>Filter 2</MenuItem>
+  <MenuItem onClick={createHandleMenuClick('Filter 3')}>Filter 3</MenuItem>
+  <MenuItem onClick={createHandleMenuClick('Filter 4')}>Filter 4</MenuItem>
+  <MenuItem onClick={createHandleMenuClick('Filter 5')}>Filter 5</MenuItem>
+  <MenuItem onClick={createHandleMenuClick('Filter 6')}>Filter 6</MenuItem>
+  <MenuItem onClick={createHandleMenuClick('Filter 7')}>Filter 7</MenuItem>
+  <MenuItem onClick={createHandleMenuClick('Filter 8')}>Filter 8</MenuItem>
+  <MenuItem onClick={createHandleMenuClick('Filter 9')}>Filter 9</MenuItem>
+  <MenuItem onClick={createHandleMenuClick('Filter 10')}>Filter 10</MenuItem>
+  <MenuItem onClick={createHandleMenuClick('Filter 11')}>Filter 11</MenuItem>
+  <MenuItem onClick={createHandleMenuClick('Filter 12')}>Filter 12</MenuItem>
+  <MenuItem onClick={createHandleMenuClick('Filter 13')}>Filter 13</MenuItem>
+  <MenuItem onClick={createHandleMenuClick('Filter 14')}>Filter 14</MenuItem>
+</Menu>
+</div>
